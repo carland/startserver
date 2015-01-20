@@ -1,0 +1,61 @@
+#!/usr/bin/env node
+/* ================================================================
+ * startserver by xdf(xudafeng[at]126.com)
+ *
+ * first created at : Mon Jun 02 2014 20:15:51 GMT+0800 (CST)
+ *
+ * ================================================================
+ * Copyright 2013 xdf
+ *
+ * Licensed under the MIT License
+ * You may not use this file except in compliance with the License.
+ *
+ * ================================================================ */
+
+'use strict';
+
+process.title = 'startserver';
+
+require('colorx');
+var program = require('commander');
+var logger = require('logx');
+
+var pkg = require('../package.json');
+
+program
+  .option('-v, --versions', 'output version infomation')
+  .option('-n, --normal',   'start http server without opening browser')
+  .option('-s, --static',   'generate static slide file for markdown')
+  .option('-p, --plugins',  'show plugin list')
+  .usage('[port 8080]')
+  .parse(process.argv);
+
+if (program.versions) {
+  console.info('\n  ' + pkg.version.gray + '\n');
+  process.exit(0);
+}
+
+var startserver = require('..');
+
+if (program.plugins) {
+  return startserver.plugins();
+}
+
+if (program.static) {
+  var args = program.args;
+
+  if (args.length !== 1) {
+    logger.warn('Arguments Error.');
+    return program.help();
+  }
+  return startserver.generate(args[0]);
+}
+
+var port = parseInt(program.args[0] || 8080);
+
+if (isNaN(port)) {
+  logger.warn('Arguments Error.'.red + '\n');
+  return program.help();
+}
+
+startserver.init(port, program);
