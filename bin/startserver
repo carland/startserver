@@ -25,6 +25,7 @@ var startserver = require('..');
 
 program
   .option('-s, --silent',   'start http server without opening browser')
+  .option('-m, --markdown', 'auto parse and render markdown file')
   .option('-p, --port',     'port to use (8080 default)')
   .option('-d, --disable',  'disable default index router')
   .option('-v, --versions', 'output version infomation')

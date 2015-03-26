@@ -106,6 +106,10 @@ generate static slide file to markdown [[sample]](https://rawgit.com/xudafeng/st
 
 start http server without opening browser
 
+#### -m, --markdown
+
+auto parse and render markdown file
+
 #### -p, --port
 
 port to use (8080 default)

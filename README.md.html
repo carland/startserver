@@ -107,7 +107,6 @@ hidden;cursor: pointer;width: 20%;height: 20%;background: rgba(128, 128, 128,
 <a href="https://npmjs.org/package/startserver"><img src="https://img.shields.io/npm/dm/startserver.svg?style=flat-square" alt="npm download"></a></p>
 <blockquote>
 <p>Yet another http server.</p>
-<p>And generate a slider so easily.</p>
 </blockquote>
 <h2 id="installation">Installation</h2>
 <h3 id="node-requirement">Node requirement</h3>
@@ -147,24 +146,27 @@ hidden;cursor: pointer;width: 20%;height: 20%;background: rgba(128, 128, 128,
 <li>Generator support and compatible runtime.</li>
 <li>Original javascript source code.</li>
 </ul>
-<h2 id="cli-options">Cli Options</h2>
+<h2 id="commands">Commands</h2>
+<h4 id="plugins">plugins</h4>
+<p>show plugin list</p>
+<h4 id="generate">generate</h4>
+<pre><code class="lang-bash">$ startsever generate README.<span class="hljs-built_in">md</span>
+</code></pre>
+<p>generate static slide file to markdown <a href="https://rawgit.com/xudafeng/startserver/master/README.md.html">[sample]</a></p>
+<h2 id="plugins">Plugins</h2>
+<p><img src="https://avatars3.githubusercontent.com/u/9607546?v=3&amp;s=100" alt="logo"></p>
+<p><a href="https://github.com/startserver">plugins list</a></p>
+<h2 id="options">Options</h2>
 <h4 id="-s-silent">-s, --silent</h4>
 <p>start http server without opening browser</p>
-<h4 id="-g-generate">-g, --generate</h4>
-<p>generate static slide file to markdown <a href="https://rawgit.com/xudafeng/startserver/master/README.md.html">[sample]</a></p>
-<pre><code class="lang-bash">$ startsever -g README.<span class="hljs-built_in">md</span>
-</code></pre>
+<h4 id="-m-markdown">-m, --markdown</h4>
+<p>auto parse and render markdown file</p>
 <h4 id="-p-port">-p, --port</h4>
 <p>port to use (8080 default)</p>
 <h4 id="-d-disable">-d, --disable</h4>
 <p>disable default index router</p>
-<h4 id="-l-list">-l, --list</h4>
-<p>show plugin list</p>
 <h4 id="-v-version">-v, --version</h4>
 <p>output version infomation</p>
-<h4 id="plugins">Plugins</h4>
-<p><img src="https://avatars3.githubusercontent.com/u/9607546?v=3&amp;s=100" alt="logo"></p>
-<p><a href="https://github.com/startserver">plugins list</a></p>
 <h2 id="help">Help</h2>
 <pre><code class="lang-bash"><span class="hljs-variable">$ </span>startserver -h
 </code></pre>
